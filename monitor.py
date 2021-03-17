@@ -23,7 +23,7 @@ def on_message(client, userdata, msg):
 mqttClient = mqtt.Client()
 mqttClient.e3dc = None
 mqttClient.lastTimestamp = None
-mqttClient.connect('mqtt-broker.server.lan')
+mqttClient.connect('mqtt.broker.lan')
 mqttClient.subscribe('energy/pv/inverter/e3dc/0/all')
 mqttClient.on_message = on_message
 mqttClient.loop_start()

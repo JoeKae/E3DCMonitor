@@ -1,7 +1,6 @@
 //  Author: J. Kaeppel
 
-const client = new Paho.Client("mqtt-broker.server.lan", 8081, "", "e3dcWebmonitor1" + new Date().getTime());
-
+const client = new Paho.Client("mqtt.broker.lan", 8081, "", "e3dcWebmonitor" + new Date().getTime());
 const myTopic = "energy/pv/inverter/e3dc/0/all";
 
 client.onConnectionLost = onConnectionLost;
