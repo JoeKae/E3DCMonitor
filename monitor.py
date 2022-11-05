@@ -1,4 +1,5 @@
 #  Author: J. Kaeppel
+import os
 
 from flask import *
 import paho.mqtt.client as mqtt
@@ -36,4 +37,5 @@ def index():
     return render_template('/monitor.html', title='Home', e3dc=mqttClient.e3dc, timestamp=mqttClient.lastTimestamp)
 
 
+os.environ.pop("FLASK_RUN_FROM_CLI")
 app.run(host='0.0.0.0', port='80', debug=False)
